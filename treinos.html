@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Treinos - Six Seven</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body> 
+
+    <div class="card-home">
+        <h2>Treinos</h2>
+        <p id="mensagemBoasVindas">Selecione uma Ficha</p>
+
+        <button type="button" id="btnTreinoA">Treino A (Peito/Triceps)</button>
+        <button type="button" id="btnTreinoB">Treino B (Costas/Biceps)</button>
+        <button type="button" id="btnTreinoC">Treino C (Pernas/Ombro)</button>
+
+        <div id="detalhesTreino" class="detalhes-treino">
+            <p id="tituloTreino" class="titulo-treino"></p>
+            <ul id="listaExercicios" class="lista-exercicios"></ul>
+        </div>
+
+        <button type="button" id="btnVoltar" class="btn-secundario">Voltar ao Início</button>
+    </div>
+
+    <script src="supabaseClient.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

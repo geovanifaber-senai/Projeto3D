@@ -1,0 +1,56 @@
+CREATE DATABASE academia_bd;
+USE academia_bd;
+
+CREATE TABLE planos(
+id_planos INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(50) NOT NULL,
+valor_mensal DECIMAL (8,2) NOT NULL,
+duracao_meses INT NOT NULL
+);
+
+CREATE TABLE alunos(
+id_aluno INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+cpf VARCHAR(14) UNIQUE NOT NULL,
+telefone VARCHAR (20),
+data_nascimento DATE NOT NULL
+);
+
+CREATE TABLE instrutores(
+id_instrutor INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+especialidade VARCHAR(50) NOT NULL,
+telefone VARCHAR(20)
+);
+
+CREATE TABLE matriculas(
+id_matricula INT AUTO_INCREMENT PRIMARY KEY,
+id_aluno INT NOT NULL,
+id_plano INT NOT NULL,
+id_instrutor INT,
+data_inicio DATE DEFAULT (CURRENT_DATE),
+status VARCHAR(20) DEFAULT 'Ativo',
+FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno),
+FOREIGN KEY (id_plano) REFERENCES planos(id_planos),
+FOREIGN KEY (id_instrutor) REFERENCES instrutores(id_instrutor)
+);
+
+INSERT INTO planos (nome, valor_mensal, duracao_meses) VALUES
+('Mensal Basico', 119.90, 1),
+('Semestral VIP', 89.90, 6),
+('Anual Total', 69.90, 12);
+
+INSERT INTO instrutores (nome, especialidade, telefone) VALUES
+('Roberto Santos', 'Musculacao', '41-98888-1111'),
+('Carla Dias', 'Pilates e Funcional', '41-97777-2222'),
+('Fernando Rocha', 'Spinning e Cardio', '41-96666-3333');
+
+INSERT INTO alunos (nome, cpf, telefone, data_nascimento) VALUES
+('Lucas Mendes', '111.222.333-44', '41-99999-3333', '1998-05-14'),
+('Mariana Lima', '555.666.777-88', '41-99999-4444', '2001-11-20'),
+('Juliana Ferreira', '999.888.777-66', '41-98765-4321', '1995-08-22');
+
+INSERT INTO matriculas (id_aluno, id_plano, id_instrutor) VALUES
+(1, 2, 1),
+(2, 3, 2),
+(3, 1, 3);

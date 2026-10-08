@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Acesso - Academia Six Seven</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head> 
+<body> 
+    <div class="card-acesso">
+        <!-- Formulario de Login -->
+        <form id="formLogin">
+            <h2>Login</h2>
+            <input type="text" id="loginUsuario" placeholder="Usuário ou CPF" required>
+            <input type="password" id="loginSenha" placeholder="Senha" required>
+            <button type="submit" id="btnEntrar">Entrar</button>
+            <p class="texto-alternar">
+                Não tem uma conta? <a href="#" id="linkIrCadastro">Criar conta</a>
+            </p>
+        </form>
+
+        <!-- Formulario de Cadastro Completo -->
+        <form id="formCadastro" style="display: none;">
+            <h2>Criar Conta</h2>
+            <input type="text" id="cadNome" placeholder="Nome Completo" required>
+            <input type="text" id="cadUsuario" placeholder="Nome de Usuário" required>
+            <input type="password" id="cadSenha" placeholder="Senha" required>
+            <input type="text" id="cadCpf" placeholder="CPF" required>
+            <input type="tel" id="cadTelefone" placeholder="Telefone / WhatsApp">
+            <input type="date" id="cadDataNascimento" required>
+            <input type="text" id="cadEndereco" placeholder="Endereço Completo">
+            
+            <button type="submit" id="btnCadastrar">Cadastrar</button>
+            <p class="texto-alternar">
+                Já tem uma conta? <a href="#" id="linkIrLogin">Fazer login</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="supabaseClient.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

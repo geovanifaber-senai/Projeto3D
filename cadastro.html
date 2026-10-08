@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <form id="formCadastroSeparado">
+        <h2>Cadastrar Usuário</h2>
+        <input type="text" id="cadNome" placeholder="Nome Completo" required>
+        <input type="text" id="cadUsuario" placeholder="Nome de Usuário" required>
+        <input type="password" id="cadSenha" placeholder="Senha" required>
+        <input type="text" id="cadCpf" placeholder="CPF" required>
+        <input type="tel" id="cadTelefone" placeholder="Telefone" required>
+        <input type="date" id="cadDataNascimento" required>
+        <input type="text" id="cadEndereco" placeholder="Endereço" required>
+        
+        <button type="submit">Cadastrar</button>
+        <button type="button" id="btnVoltarHome" class="btn-secundario">Voltar</button>
+    </form>
+
+    <script src="supabaseClient.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('btnVoltarHome').addEventListener('click', function () {
+            window.location.href = 'home.html';
+        });
+    </script>
+</body>
+</html>
